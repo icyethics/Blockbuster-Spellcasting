@@ -17,7 +17,9 @@ Blockbuster.Spellcasting.disabledCounters = {
 -- Read in Atlases
 local atlases = 
 {
-    {'modicon', 32, 32, 'modicon.png'}
+    {'modicon', 32, 32, 'modicon.png'},
+    {'suit_spells', 71, 95, 'suit_spells.png'},
+    {'deck', 71, 95, 'kino_backs.png'}
 }
 
 for _index, _object in ipairs(atlases) do
@@ -42,12 +44,20 @@ end
 local _list_of_folders = {
     "src",
     "items/spells",
+    "items/backs"
 }
 
 for _index, _folder in ipairs(_list_of_folders) do
     local files = NFS.getDirectoryItems(Blockbuster.Spellcasting.mod_dir .. _folder)
     for _, _filename in ipairs(files) do
         Blockbuster.Spellcasting.load_file(_folder .. "/" .. _filename)
+    end
+end
+
+-- Register spells to the spelltable
+for _key, _object in pairs(Blockbuster.Spellcasting.Spells) do
+    if #_object.suit_recipe == 2 then
+        Blockbuster.subscribe_spell_to_suits(_object.key, _object.suit_recipe[1], _object.suit_recipe[2])
     end
 end
 

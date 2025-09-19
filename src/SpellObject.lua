@@ -14,18 +14,27 @@ Blockbuster.Spellcasting.Spell = SMODS.Center:extend({
     required_params = {
         "key",
     },
-    inject = function() end,
+    suit_recipe = {
+        -- Suit1 (string),
+        -- Suit2 (string)
+
+    },
+    spell_class = {},
     set_card_type_badge = function(self, card, badges)
         badges[#badges+1] = create_badge(localize('k_spell'), G.C.PURPLE, G.C.WHITE, 1.2 )
     end,
-    cast = function(strength)
-        local _obj = SMODS.Spells[self.key]
+    cast_spell = function(self, strength)
+        local _obj = Blockbuster.Spellcasting.Spells[self.key]
         G.GAME.current_round.spells_cast = G.GAME.current_round.spells_cast + 1
         G.GAME.current_round.last_spell_cast.key = self.key
         G.GAME.current_round.last_spell_cast.strength = strength
         if _obj and _obj.cast and type(_obj.cast) == 'function' then
-            _obj:cast()
+            local _returnval = _obj:cast()
+            print("returnval")
+            print(_returnval)
+            return _returnval
         end
+        print("got further")
         return true
     end
 })

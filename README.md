@@ -5,7 +5,7 @@ Blockbuster is a series of API mods that offer features from the Balatro Goes Ki
 Blockbuster Mods:
 - Balatro Goes Kino (Source Content mod)
 - Blockbuster: Counters 
-- Blockbuster: Spellcasting (Not Yet Released)
+- Blockbuster: Spellcasting
 - Blockbuster: Confections (Not Yet Released)
 - Blockbuster: Abduction (Not Yet Released)
 - Blockbuster: Value Manipulation (Not Yet Released)
@@ -14,4 +14,4 @@ Mods that use Blockbuster: Spellcasting
 - NONE 
 
 
-Blockbuster: Counters is an API mod that adds a new layer to both playing cards and jokers: Counters. Counters offer design space to add status effects to cards and jokers, as well as timed detrimental effects. They are intended to tick down with each trigger or scoring of the card they're placed on, removing themselves after all counters have been consumed. 
+Blockbuster: Spellcasting is an API mod that adds a new mechanic to Balatro, with Spells. Spells are effects that can be cast by both jokers and playing cards. To showcase, the mod comes with a deck that enables spellcasting. The core mod adds Spells based on the vanilla suits (+ additional functions to account for wild cards), and is set up to allow mod developers to add spells for their own, new suits, as well as add general spells, and jokers that interact with it
